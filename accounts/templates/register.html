@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% block content %}
+        <div class='container'>
+    <div class='col-md-12'>
+        <h1>Candyland Club</h1>
+        <h4>Joining the Candyland Club gets you exclusive updates and special offers. Membership is free so you have NOTHING to lose!</h4>
+    </div>
+</div>
+<hr>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+
+            <!-- Form Data-->
+
+            <div class="col-sm-6">
+                <form role="form" method="post" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Create account</button>
+                    </div>
+                </form>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
