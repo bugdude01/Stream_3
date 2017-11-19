@@ -35,9 +35,9 @@ class User(AbstractUser):
     # in later units we'll be adding things like payment details!
     objects = AccountUserManager()
 
-    def is_subscribed(self, newsletter):
+    def is_subscribed(self, sweetsubs):
         try:
-            purchase = self.purchases.get(newsletter__pk=newsletter.pk)
+            purchase = self.purchases.get(sweetsubs_pk=sweetsubs.pk)
         except Exception:
             return False
 

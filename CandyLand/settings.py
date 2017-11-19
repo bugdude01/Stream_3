@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'paypal_store',
     'products',
-    'newsletter',
+    'sweetsubs',
 ]
 
 MIDDLEWARE = [

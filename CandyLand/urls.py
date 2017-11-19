@@ -20,7 +20,7 @@ from CandyLand_app import views as Candyland_app_views
 from paypal_store import views as paypal_views
 from paypal.standard.ipn import urls as paypal_urls
 from products import views as product_views
-from newsletter import views as newsletter_views
+from sweetsubs import views as sweetsubs_views
 
 
 from CandyLand_app import views
@@ -48,5 +48,5 @@ urlpatterns = [
     # Product URL's
     url(r'^products/$', product_views.all_products),
     # Newsletter URL's
-    url(r'^newsletter/$', newsletter_views.all_newsletter),
+    url(r'^sweetsubs/$', sweetsubs_views.all_sweetsubs),
 ]

@@ -6,25 +6,25 @@ from paypal.standard.forms import PayPalPaymentsForm
 register = template.Library()
 
 
-def paypal_form_for(newsletter, user):
-    if user.is_subscribed(newsletter):
+def paypal_form_for(sweetsubs, user):
+    if user.is_subscribed(sweetsubs):
         html = "Subscribed!"
     else:
         paypal_dict = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,
-            "currency_code": "USD",
+            "currency_code": "GBP",
             "cmd": "_xclick-subscriptions",
-            "a3": newsletter.price,
+            "a3": sweetsubs.price,
             "p3": 1,
             "t3": "M",
             "src": 1,
             "sra": 1,
-            "item_name": newsletter.name,
+            "item_name": sweetsubs.name,
             "invoice": uuid.uuid4(),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
             "return_url": "%s/paypal-return/" % settings.SITE_URL,
             "cancel_return": "%s/paypal-cancel/" % settings.SITE_URL,
-            "custom": "%s-%s" % (newsletter.pk, user.id)
+            "custom": "%s-%s" % (sweetsubs.pk, user.id)
         }
 
         if settings.DEBUG:

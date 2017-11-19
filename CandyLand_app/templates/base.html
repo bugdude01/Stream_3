@@ -97,7 +97,7 @@
                         {% if user.is_authenticated %}
                             <li><a href="{% url 'logout' %}">Log Out</a></li>
                             <li><a href="/products/">Sweet Deals!</a></li>
-                            <li><a href="/newsletter/">Subscription Deals!</a></li>
+                            <li><a href="/sweetsubs/">Subscription Deals!</a></li>
                         {% else %}
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>

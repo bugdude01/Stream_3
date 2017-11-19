@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('subscription_end', models.DateTimeField(default=django.utils.timezone.now)),
-                ('newsletter', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='newsletter.Newsletter')),
+                ('sweetsubs', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='sweetsubs.Newsletter')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='purchases', to=settings.AUTH_USER_MODEL)),
             ],
         ),
