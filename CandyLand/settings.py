@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'paypal_store',
     'products',
     'sweetsubs',
+    'tinymce',
+    'emoticons',
+    'threads',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,6 +137,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),  #  static directory at the project level
 )
 
+# tinymce settings
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
 AUTH_USER_MODEL = 'accounts.User'
 
