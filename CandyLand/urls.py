@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import views as accounts_views
-from CandyLand_app import views as Candyland_app_views
 from paypal_store import views as paypal_views
 from paypal.standard.ipn import urls as paypal_urls
 from products import views as product_views

@@ -17,7 +17,7 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name','email', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
         exclude = ['username']
 
     def clean_password2(self):
@@ -40,6 +40,7 @@ class UserRegistrationForm(UserCreationForm):
             instance.save()
 
         return instance
+
 
 class UserLoginForm(forms.Form):
     email = forms.EmailField()
