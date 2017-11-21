@@ -2,82 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="/"> <!-- needed for Angular HTML5 mode -->
     <title>The Candyland Cart Company</title>
-    <link rel="stylesheet" type="text/css" href="static/bower_components/bootstrap/dist/css/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static "css/font-awesome-4.5.0/css/font-awesome.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome-4.7.0/css/font-awesome.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/styling.css" %}"/>
     {% block head_js %}{% endblock head_js %}
-    <style type="text/css">
-        body {
-            padding-top: 70px;
-        }
-        #container {
-            width: 550px;
-            margin: auto;
-        }
-        fieldset {
-            align-self: center;
-        }
-        legend {
-            font-size: 30px;
-            background-color: #fff;
-            border-radius: 5px;
-            border: 1px solid #999;
-            padding: 4px 15px;
-        }
-        label.field {
-            display: block;
-            text-align: right;
-            width: 100px;
-            float: left;
-            clear: both;
-        }
-        input {
-            border-radius: 5px;
-            padding: 6px 8px;
-            float: left;
-        }
-        #event {
-            width: 100px;
-            border-radius: 5px;
-            padding: 6px 8px;
-            float: left;
-        }
-        .field {
-            padding: 6px 8px;
-        }
-        fieldset {
-            width: 450px;
-            border: 1px solid #999;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 100px;
-            background-color: #eee;
-        }
-        h1 {
-            text-align: center;
-        }
-        h2 {
-            text-align: center;
-        }
-        h4 {
-            text-align: center;
-        }
-        p {
-            text-align: justify;
-        }
-        input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-            border: 2px solid red;
-        }
-        button[disabled="disabled"]{
-            opacity: 0.4;
-            cursor: not-allowed !important;
-        }
-    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
