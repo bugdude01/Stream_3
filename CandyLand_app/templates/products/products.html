@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
+    <div class="col-md-12">
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Item</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
@@ -13,6 +15,7 @@
         <tbody>
             {% for product in products %}
                 <tr>
+                    <td><img src="/media/images">{{ product.image }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.description }}</td>
                     <td>${{ product.price }}</td>
@@ -21,4 +24,5 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
 {% endblock %}

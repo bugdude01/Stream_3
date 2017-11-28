@@ -80,6 +80,9 @@ TEMPLATES = [
     },
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 WSGI_APPLICATION = 'CandyLand.wsgi.application'
 
 
