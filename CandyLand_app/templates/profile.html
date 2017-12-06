@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block content %}
+{% block content %}<div class="container">
     <h2>Welcome Back {{ user.first_name }}!</h2>
     <h4>You are logged in as {{ user.email }} and you most recently logged in at {{ user.last_login }}.</h4>
     <h2>Why not take a peek at some of our sweet packages or maybe even take out one of our
     amazing Sweet Subscriptions.</h2>
+    <h4>Don't forget, as a member you get 10% discount off ANY bookings you make with our Candy Carts for ANY events
+    that you book with us. Just quote "{{ user.first_name }} {{ user.last_name }}-10" when finalising your booking and will will apply
+    the discount to you final bill!</h4>
+</div>
 {% endblock %}

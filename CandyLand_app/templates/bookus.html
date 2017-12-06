@@ -1,60 +1,26 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load bootstrap_tags %}
 {% block content %}
     <div class='container'>
         <div class="row"></div>
             <div class='col-md-12'>
                 <h1>Bookings</h1>
                 <h4>Please complete the form below and we will come back to you as quickly as possible. </h4>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-            </div>
-            <!-- Form Data-->
-            <div class="col-sm-6">
-                <form name="bookingForm" ng-submit="submitForm()" novalidate>
-                    <div class="form-group">
-                        <input type="text" placeholder="Name" name="name" class="form-control" ng-model="user.name" ng-required="true">
-                        <p ng-show="bookingForm.name.$touched && bookingForm.name.$invalid" class="help-block">Your name is required.</p>
+                <div class='col-md-3'></div>
+                <!-- Form Data-->
+                <div class='col-md-6'>
+                <form role="form" method="post" action="{% url 'bookus' %}">
+                    <legend>Booking Enquiry Form</legend>
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                   <div class="form-group">
+                        <button type="submit" class="btn btn-default btn-lg">Submit Enquiry</button>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" name="email" class="form-control" ng-model="user.email" ng-required="true">
-                        <p ng-show="bookingForm.email.$touched && bookingForm.email.$invalid" class="help-block">Your Email is required.</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="telephone" placeholder="Home Phone" name="homePhone" class="form-control" ng-model="user.homePhone" ng-required="true">
-                        <p ng-show="bookingForm.homePhone.$touched && bookingForm.homePhone.$invalid" class="help-block">Your Home Phone is required.</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="telephone" placeholder="Mobile Phone" name="mobilePhone" class="form-control" ng-model="user.mobilePhone" ng-required="true">
-                        <p ng-show="bookingForm.mobilePhone.$touched && bookingForm.mobilePhone.$invalid" class="help-block">Your Mobile Phone is required.</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="date" placeholder="Date of Event" name="date" class="form-control" ng-model="user.date" ng-required="true">
-                        <p ng-show="bookingForm.date.$touched && bookingForm.date.$invalid" class="help-block">The date of the event needs to be AT LEAST three weeks away!</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Event Type" name="eventType" class="form-control" ng-model="user.eventType" ng-required="true">
-                        <p ng-show="bookingForm.eventType.$touched && bookingForm.eventType.$invalid" class="help-block">Tell us what you are celebrating.</p>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" placeholder="Number Of Guests" name="guestNumber" class="form-control" ng-model="user.guestNumber" ng-required="true">
-                        <p ng-show="bookingForm.guestNumber.$touched && bookingForm.guestNumber.$invalid" class="help-block">We need to know how many guests you will have.</p>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" ng-disabled="bookingForm.$invalid">Submit</button>
                 </form>
+                </div>
             </div>
-
+            </div>
             <!--End of form Data-->
-
-            <div class="col-md-3">
-            </div>
         </div>
-    </div>
-</div>
     {% endblock %}

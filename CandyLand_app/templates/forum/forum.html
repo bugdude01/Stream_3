@@ -4,6 +4,7 @@
 {% block content %}
    {% load bootstrap_tags %}
    {% for subject in subjects %}
+       <div class="col-md-12">
        <section class="subject">
            <h2><a href="{% url "threads" subject.id %}">{{ subject.name }}</a></h2>
            <p>
@@ -22,5 +23,6 @@
                </tr>
            </table>
        </section>
+       </div>
    {% endfor %}
 {% endblock %}

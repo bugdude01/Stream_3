@@ -35,12 +35,13 @@ urlpatterns = [
     url(r'^packages/$', views.get_packages),
     url(r'^gallery/$', views.get_gallery),
     url(r'^sweetlist/$', views.get_sweetlist),
-    url(r'^bookus/$', views.get_bookus),
+    url(r'^bookus/$', views.enquiry, name='bookus'),
     url(r'^members/$', views.get_members),
     url(r'^register/$', accounts_views.register, name='register'),
     url(r'^profile/$', accounts_views.profile, name='profile'),
     url(r'^login/$', accounts_views.login, name='login'),
     url(r'^logout/$', accounts_views.logout, name='logout'),
+    url(r'^thanks/$', views.thanks),
 
     # PayPal URL's
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),

@@ -7,7 +7,7 @@
                     <h1>Packages</h1>
                     <h4>We have packages to suit all tastes, styles, venues and budgets. Whether you are catering for a birthday party of 50 guests or a big wedding for a few hundred, The Candyland Cart Company can handle it!</h4>
                     <div class="text-center">
-                    <a href="/CandyLand_app/templates/bookus.html" class="btn btn-default btn-lg">Bookings</a>
+                    <a href="/bookus" class="btn btn-default btn-lg">Bookings</a>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,21 @@
                 </div>
         <div class="col-md-4">
                 <img src="/static/candyland/images/ChristmasCones001-min.jpg" class="img-responsive" alt="ChristmasCones">
+        </div>
+        <div class="col-md-12">
+            <h1>Candyland Club Members</h1>
+            {% if user.is_authenticated %}
+            <h4>Take a look at the latest offers</h4>
+            <div class="text-center">
+                <a href="{% url 'profile' %}" class="btn btn-default btn-lg">Member Home</a>
+            </div>
+            {% else %}
+            <h4>Why not join the Candyland Club. It's free and you get access to exclusive offers such as regular Sweet
+            Package shipments and special deals on bookings.</h4>
+            <div class="text-center">
+                <a href="{% url 'register' %}" class="btn btn-default btn-lg">Join Us</a>
+            </div>
+            {% endif %}
         </div>
         </div>
     {% endblock %}
