@@ -28,4 +28,4 @@ This app uses the following tech to do its thing:
 * HTML5
 * CSS
 * Bootstrap for styling and ensuring cross browser and multi-display compatibility
-* 
+*

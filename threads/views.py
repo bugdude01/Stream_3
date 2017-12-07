@@ -132,10 +132,10 @@ def edit_post(request, thread_id, post_id):
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
-           form.save()
-           messages.success(request, "You have updated your thread!")
+            form.save()
+            messages.success(request, "You have updated your thread!")
 
-           return redirect(reverse('thread', args={thread.pk}))
+            return redirect(reverse('thread', args={thread.pk}))
     else:
         form = PostForm(instance=post)
 

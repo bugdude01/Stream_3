@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-    <h1>You've cancelled the purchase of this item!</h1>
- 
-    <h2>POST</h2>
-    {{ post }}
- 
-    <h2>GET</h2>
-    {{ get }}
+    <div class="container">
+        <h1>You've cancelled the purchase of this item!</h1>
+
+        <h2>POST</h2>
+        {{ post }}
+
+        <h2>GET</h2>
+        {{ get }}
+    </div>
 {% endblock %}
