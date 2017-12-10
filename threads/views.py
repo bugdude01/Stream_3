@@ -41,22 +41,19 @@ def new_thread(request, subject_id):
         post_form = PostForm(request.POST)
         poll_form = PollForm(request.POST)
         poll_subject_formset = poll_subject_formset_class(request.POST)
-        if (thread_form.is_valid() and
-                post_form.is_valid() and
-                poll_form.is_valid() and
-                poll_subject_formset.is_valid()):
+        if thread_form.is_valid() and post_form.is_valid():
+            if request.POST.get('is_a_poll', None) and poll_form.is_valid() and poll_subject_formset.is_valid():
 
-            thread = thread_form.save(False)
-            thread.subject = subject
-            thread.user = request.user
-            thread.save()
+                thread = thread_form.save(False)
+                thread.subject = subject
+                thread.user = request.user
+                thread.save()
 
-            post = post_form.save(False)
-            post.user = request.user
-            post.thread = thread
-            post.save()
+                post = post_form.save(False)
+                post.user = request.user
+                post.thread = thread
+                post.save()
 
-            if 'is_a_poll' in request.POST:
                 poll = poll_form.save(False)
                 poll.thread = thread
                 poll.save()
@@ -66,11 +63,25 @@ def new_thread(request, subject_id):
                     subject.poll = poll
                     subject.save()
 
-                messages.success(request, "You have created a new poll!")
-            else:
-                messages.success(request, "You have create a new thread!")
+                messages.success(request, "You have created a thread with  poll!")
+                return redirect(reverse('thread', args={thread.pk}))
 
-            return redirect(reverse('thread', args={thread.pk}))
+            else:
+
+
+                thread = thread_form.save(False)
+                thread.subject = subject
+                thread.user = request.user
+                thread.save()
+
+                post = post_form.save(False)
+                post.user = request.user
+                post.thread = thread
+                post.save()
+
+                messages.success(request, "You have create a new thread!")
+                return redirect(reverse('thread', args={thread.pk}))
+
     else:
         thread_form = ThreadForm()
         post_form = PostForm()

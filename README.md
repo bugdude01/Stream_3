@@ -2,12 +2,12 @@
 Final Project for Stream 3
 
 This app takes the original CandyLand website and re-builds it using greater functionality utilising
-integrated front-end and back-end components together to create a beter, more inclusive user
+integrated front-end and back-end components together to create a better, more inclusive user
 experience.
 
 ## Key Features
 
-As well as the usual "Take a look at what we do", of the initial website, things hae moved on so now
+As well as the usual "Take a look at what we do", of the initial website, things have moved on so now
 you can:
 
 * Visit social media outlets for the Candyland Cart Company and see what's happening
@@ -28,4 +28,4 @@ This app uses the following tech to do its thing:
 * HTML5
 * CSS
 * Bootstrap for styling and ensuring cross browser and multi-display compatibility
-*
+* PayPal to manage one-off payments and subscription services
